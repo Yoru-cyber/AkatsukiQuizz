@@ -1,0 +1,23 @@
+# .dockerignore
+
+# IDE metadata
+.idea/
+.idea/.idea/
+.idea/.idea_modules/
+
+# Gradle build files
+build/
+.gradle/
+
+# Kotlin build cache
+.kotlin/
+
+# IntelliJ project files
+out/
+
+# Compiled classes
+build/classes/
+build/resources/
+
+# Compiled jars
+build/libs/
