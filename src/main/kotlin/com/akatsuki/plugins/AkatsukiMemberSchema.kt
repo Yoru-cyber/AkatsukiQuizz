@@ -6,13 +6,13 @@ import org.litote.kmongo.getCollection
 @Serializable
 data class AkatsukiMember(val id: Int, val name: String, val alias: String, val status: String, val range: String, val description: String)
 //dependency injection of mongo client
-class AkatsukiService(private val client: MongoClient){
+class AkatsukiService(client: MongoClient){
 
-    val database = client.getDatabase("akatsuki")
-    val collection = database.getCollection<AkatsukiMember>("members")
+    private val database = client.getDatabase("akatsuki")
+    private val collection = database.getCollection<AkatsukiMember>("members")
 
 
-    fun GetAll(): List<AkatsukiMember>{
+    fun getAll(): List<AkatsukiMember>{
         return collection.find().toList()
     }
 

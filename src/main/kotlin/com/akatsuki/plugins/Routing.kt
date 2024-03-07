@@ -8,20 +8,11 @@ import io.ktor.server.routing.*
 import org.litote.kmongo.KMongo
 
 fun Application.configureRouting() {
-    val client = KMongo.createClient("mongodb+srv://carlos:b5wqOPr2aKKA85yj@testcluster.q8rbtz5.mongodb.net/?retryWrites=true&w=majority&appName=TestCluster")
+
+    val uri = System.getenv("MONGODB_URI")
+    val client = KMongo.createClient(uri)
 
     install(AutoHeadResponse)
-//    routing {
-//        get("/") {
-//            call.respondText("Hello World!")
-//        }
-//        get("/Akatsuki"){
-//            val service = AkatsukiService(client)
-//            val members = service.GetAll() //service failing
-//
-//            call.respond(members)
-//        }
-//    }
     routing {
         akatsukiAll(client)
     }
