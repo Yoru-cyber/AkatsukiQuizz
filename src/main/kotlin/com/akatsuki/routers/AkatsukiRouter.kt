@@ -13,7 +13,7 @@ fun Route.akatsukiAll(client: MongoClient){
         val akatsukiMembers: List<AkatsukiMember>
         try {
             val service = AkatsukiService(client)
-            akatsukiMembers = service.getAll()
+            akatsukiMembers = service.getAllAkatsukiMembers()
             call.respond(status = HttpStatusCode.OK, akatsukiMembers)
         }
         catch (error: Throwable){

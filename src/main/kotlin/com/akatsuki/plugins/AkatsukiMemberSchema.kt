@@ -12,7 +12,7 @@ class AkatsukiService(client: MongoClient){
     private val collection = database.getCollection<AkatsukiMember>("members")
 
 
-    fun getAll(): List<AkatsukiMember>{
+    fun getAllAkatsukiMembers(): List<AkatsukiMember>{
         return collection.find().toList()
     }
 
