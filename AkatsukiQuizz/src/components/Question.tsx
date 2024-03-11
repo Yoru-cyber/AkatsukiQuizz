@@ -1,4 +1,6 @@
-const questionsArr = [
+import IQuestion from "../interfaces/IQuestion";
+
+const questionsArr: Array<IQuestion> = [
     {
         id: 1,
         question: "What is your MBTI?",
@@ -14,11 +16,9 @@ const questionsArr = [
         question: "What is your favorite movie?",
         answers: ["Lord of the rings", "Harry potter", "Dune", "Star Wars"]
     }
-]
-type IQuestion = {
-    Id: number
-}
-function Question({Id}: IQuestion) {
+];
+function Question(props: {Id: number}) {
+    const {Id} = props;
     return (
         <>
             <div style={{textAlign: "center"}}>
