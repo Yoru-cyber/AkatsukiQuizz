@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import IQuestion from "../interfaces/IQuestion";
+import { Button, ButtonGroup } from "@mui/material";
 
 const questionsArr: Array<IQuestion> = [
   {
@@ -32,7 +33,8 @@ function Question(props: { Id: number }) {
       <div style={{ textAlign: "center", marginTop: "250px" }}>
         {questionsArr.find((question) => question.id === Id)?(
             <>
-              <p>{questionsArr.find((question) => question.id === Id)?.answers.map((answer) => <button>{answer}</button>)}</p>
+            <h2>{questionsArr.find((question) => question.id === Id)?.question}</h2>
+              <p>{questionsArr.find((question) => question.id === Id)?.answers.map((answer) => <ButtonGroup><Button>{answer}</Button></ButtonGroup>)}</p>
               </>
         ) : <p>{t("Question.Error.NotFound")}</p>}
         {/* it should be checked first if arr[Id] exists/*/}
