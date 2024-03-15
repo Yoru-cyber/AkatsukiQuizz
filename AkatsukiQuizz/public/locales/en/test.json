@@ -1,4 +1,7 @@
 {
     "Home.SecondTitle": "Find out which akatsuki member you are",
-    "Home.Quizz": "Do quizz"
+    "Home.Quizz": "Do quizz",
+    "NavBar.Home": "Home",
+    "NavBar.About": "About",
+    "Question.Error.NotFound": "Target question not found! ☹️"
 }

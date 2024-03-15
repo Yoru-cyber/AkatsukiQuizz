@@ -25,7 +25,7 @@ function NavBar() {
       i18n.changeLanguage("en");
     }
   }
-  const {i18n} = useTranslation(["test"]);
+  const {i18n, t} = useTranslation(["test"]);
   return (
     <NavBar>
       <Ul>
@@ -34,12 +34,12 @@ function NavBar() {
         
         <li>
           <Link className="Link" to="/home">
-            Home
+            {t("NavBar.Home")}
           </Link>
         </li>
         <li>
           <Link className="Link" to="/about">
-            About
+            {t("NavBar.About")}
           </Link>
         </li>
         <li>
