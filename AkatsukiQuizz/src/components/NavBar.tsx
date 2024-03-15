@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
+import { Button} from "@mui/material";
 function NavBar() {
   const NavBar = styled.nav`
     margin: 0;
@@ -30,7 +31,8 @@ function NavBar() {
     <NavBar>
       <Ul>
         
-        <button onClick={changeLanguage} style={{border: "1px solid white",borderRadius: "5px" , background: "none", color: "var(--foreground-color)"}}>Change Language</button>
+          <Button variant="text" style={{color:"white"}} onClick={changeLanguage}>{i18n.language}</Button>
+   
         
         <li>
           <Link className="Link" to="/home">
