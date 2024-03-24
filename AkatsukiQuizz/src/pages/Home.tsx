@@ -40,14 +40,6 @@ font-weight: bold;
   transform: scale(1.1);
 }
 `;
-let isFirstTime = isFirstTimeUser();
-function isFirstTimeUser(){
-  if(localStorage.getItem("isFirstTimeUser") === null){
-    localStorage.setItem("isFirstTimeUser", "true");
-    return true;
-  }
-  return false;
-}
 
 
 function Home() {
@@ -55,7 +47,6 @@ function Home() {
 
   return (
     <>
-    {isFirstTime === true && window.alert("You look lonely. I can fix that.")}
     <Suspense>
     
       <FlexContainer>

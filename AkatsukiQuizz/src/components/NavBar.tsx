@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
-import { Button} from "@mui/material";
+import { Button } from "@mui/material";
 function NavBar() {
   const NavBar = styled.nav`
-    margin: 0;
+    margin: 5px 0 0 0;
     padding: 0;
     width: 100%;
   `;
-  const Ul = styled.ul`
+  const NavList = styled.ul`
     list-style-type: none;
     text-decoration: none;
     margin: 0;
@@ -25,31 +25,31 @@ function NavBar() {
     } else {
       i18n.changeLanguage("en");
     }
-  }
-  const {i18n, t} = useTranslation(["test"]);
+  };
+  const { i18n, t } = useTranslation(["test"]);
   return (
     <NavBar>
-      <Ul>
-        
-          <Button variant="text" style={{color:"white"}} onClick={changeLanguage}>{i18n.language}</Button>
-   
-        
-        <li>
-          <Link className="Link" to="/home">
-            {t("NavBar.Home")}
-          </Link>
-        </li>
-        <li>
-          <Link className="Link" to="/about">
-            {t("NavBar.About")}
-          </Link>
-        </li>
-        <li>
-          <Link className="Link" to="/quizz">
-            Quizz
-          </Link>
-        </li>
-      </Ul>
+      <NavList>
+        <Button
+          variant="text"
+          style={{ color: "white" }}
+          onClick={changeLanguage}
+        >
+          {i18n.language}
+        </Button>
+
+        <Link className="Link" to="/home">
+          {t("NavBar.Home")}
+        </Link>
+
+        <Link className="Link" to="/about">
+          {t("NavBar.About")}
+        </Link>
+
+        <Link className="Link" to="/quizz">
+          Quizz
+        </Link>
+      </NavList>
       <style>
         {`.Link{
         text-decoration: none;
@@ -57,10 +57,10 @@ function NavBar() {
         font-size: 20px;
         
       }
-      li{
+      .Link{
         transition: transform 0.5s;
       }
-      li:hover{
+      .Link:hover{
         transform: scale(1.5);
       }
       `}
