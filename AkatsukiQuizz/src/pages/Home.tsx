@@ -1,5 +1,4 @@
 import NavBar from "../components/NavBar";
-import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import { Suspense } from "react";
 
