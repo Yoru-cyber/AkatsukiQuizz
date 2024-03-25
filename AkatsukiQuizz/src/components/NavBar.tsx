@@ -1,24 +1,6 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
 import { useTranslation } from "react-i18next";
-import { Button } from "@mui/material";
 function NavBar() {
-  const NavBar = styled.nav`
-    margin: 5px 0 0 0;
-    padding: 0;
-    width: 100%;
-  `;
-  const NavList = styled.ul`
-    list-style-type: none;
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-  `;
   const changeLanguage = () => {
     if (i18n.language === "en") {
       i18n.changeLanguage("es");
@@ -28,44 +10,28 @@ function NavBar() {
   };
   const { i18n, t } = useTranslation(["test"]);
   return (
-    <NavBar>
-      <NavList>
-        <Button
-          variant="text"
+    <nav className="text-white flex flex-row gap-4 text-center justify-center items-center mb-5">
+      
+         <button
+          className="w-8 text-white hover:scale-110"
           style={{ color: "white" }}
           onClick={changeLanguage}
         >
           {i18n.language}
-        </Button>
+        </button> 
 
-        <Link className="Link" to="/home">
+        <Link className="hover:scale-105" to="/home">
           {t("NavBar.Home")}
         </Link>
 
-        <Link className="Link" to="/about">
+        <Link className="hover:scale-105" to="/about">
           {t("NavBar.About")}
         </Link>
 
-        <Link className="Link" to="/quizz">
+        <Link className="hover:scale-105" to="/quizz">
           Quizz
         </Link>
-      </NavList>
-      <style>
-        {`.Link{
-        text-decoration: none;
-        color: var(--foreground-color);
-        font-size: 20px;
-        
-      }
-      .Link{
-        transition: transform 0.5s;
-      }
-      .Link:hover{
-        transform: scale(1.5);
-      }
-      `}
-      </style>
-    </NavBar>
+      </nav>
   );
 }
 
