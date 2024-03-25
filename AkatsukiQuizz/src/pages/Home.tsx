@@ -3,22 +3,6 @@ import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import { Suspense } from "react";
 
-const Button = styled.button`
-  border-radius: 5px;
-  border: 2px solid var(--primary-1);
-  background-color: var(--background-color);
-  color: var(--foreground-color);
-  padding: 10px 20px;
-  margin-top: 20px;
-  transition: transform 0.2s ease-in-out;
-  font-family: "Inter", sans-serif;
-  font-weight: bold;
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-  }
-`;
-
 function Home() {
   const { t } = useTranslation(["test"]);
 
