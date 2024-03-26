@@ -8,12 +8,4 @@
   color: var(--foreground-color);
   background-color: var(--background-color);
   font-family: 'Inter', sans-serif;
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-  }
 }
